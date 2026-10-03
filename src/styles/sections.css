@@ -1,0 +1,626 @@
+
+/* =========================================================
+   HERO — IMAGE BACKGROUND
+   ========================================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  padding: clamp(4.5rem, 9vw, 7.5rem) 0 clamp(4rem, 8vw, 6.5rem);
+
+  /* Generated OneMove background */
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(7, 27, 58, 0.97) 0%,
+      rgba(7, 27, 58, 0.91) 28%,
+      rgba(7, 27, 58, 0.72) 52%,
+      rgba(7, 27, 58, 0.55) 78%,
+      rgba(7, 27, 58, 0.68) 100%
+    ),
+    url("onemove-hero-bg.jpg");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Soft blue atmospheric glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      55% 75% at 82% 45%,
+      rgba(18, 97, 255, 0.22),
+      transparent 72%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 27, 58, 0.08),
+      rgba(7, 27, 58, 0.28)
+    );
+}
+
+/* Subtle bottom separation */
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(77, 163, 255, 0.45),
+    transparent
+  );
+}
+
+/* Keep content above background layers */
+.hero__grid,
+.hero__copy,
+.net {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+
+    /*
+      On mobile the image crops heavily, so keep the
+      important route activity toward the right/center.
+    */
+    background-position: 62% center;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(7, 27, 58, 0.94) 0%,
+        rgba(7, 27, 58, 0.88) 42%,
+        rgba(7, 27, 58, 0.70) 100%
+      ),
+      url("onemove-hero-bg.jpg");
+  }
+
+  .hero::before {
+    background:
+      radial-gradient(
+        85% 55% at 75% 65%,
+        rgba(18, 97, 255, 0.22),
+        transparent 72%
+      );
+  }
+}
+
+.hero__grid {
+  display: grid;
+  gap: clamp(3rem, 7vw, 5rem);
+  align-items: center;
+}
+
+/* -------------------------
+   Hero copy
+   ------------------------- */
+
+.hero__title {
+  max-width: 11ch;
+  color: #fff;
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.hero__sub {
+  max-width: 42ch;
+  margin: 1.5rem 0 0.7rem;
+  color: #8fc0ff;
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.hero__text {
+  max-width: 52ch;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(1rem, 1.5vw, 1.08rem);
+  line-height: 1.75;
+}
+
+/* -------------------------
+   Hero actions
+   ------------------------- */
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.hero__actions .btn {
+  min-height: 52px;
+  flex: 1 1 100%;
+}
+
+@media (min-width: 560px) {
+  .hero__actions .btn {
+    flex: 0 0 auto;
+  }
+}
+
+/* -------------------------
+   Network visual
+   ------------------------- */
+
+.net {
+  position: relative;
+  margin: 0;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.net::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(77, 163, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.net__svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.net__label {
+  fill: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--font);
+}
+
+.net__cap {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+  padding: 0 0.25rem;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.net__cap span {
+  flex: 1;
+}
+
+.net__cap span:nth-child(2) {
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.net__cap span:last-child {
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .net__pulse {
+    display: none;
+  }
+}
+
+/* -------------------------
+   Route map
+   ------------------------- */
+
+.rmap {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0;
+  justify-self: center;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(
+      80% 100% at 90% 10%,
+      rgba(18, 97, 255, 0.08),
+      transparent 70%
+    ),
+    linear-gradient(180deg, #fff, #f8fbff);
+  box-shadow: var(--shadow-lg);
+}
+
+.rmap::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -70px;
+  bottom: -90px;
+  border: 1px solid rgba(18, 97, 255, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.rmap__svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rmap__origin {
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 20px;
+  fill: var(--navy);
+}
+
+.rmap__label {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 19px;
+  fill: var(--navy);
+  transition:
+    fill 160ms ease,
+    transform 160ms ease;
+}
+
+.rmap__node {
+  cursor: pointer;
+}
+
+.rmap__node:hover .rmap__label,
+.rmap__node:focus-visible .rmap__label {
+  fill: var(--blue);
+  text-decoration: underline;
+}
+
+.rmap__node:focus-visible {
+  outline: none;
+}
+
+.rmap__node:focus-visible circle {
+  stroke-width: 5;
+}
+
+.rmap__cap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.5rem;
+  margin-top: 0.9rem;
+  padding: 0 0.2rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.rmap__key {
+  display: inline-block;
+  width: 28px;
+  height: 0;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  border-top: 3px solid var(--blue);
+}
+
+.rmap__key--dash {
+  border-top: 2px dashed var(--light);
+}
+/* =========================================================
+   ONEMOVE — PREMIUM CTA
+   ========================================================= */
+
+.cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(
+      70% 140% at 92% 50%,
+      rgba(18, 97, 255, 0.28),
+      transparent 62%
+    ),
+    radial-gradient(
+      45% 100% at 0% 100%,
+      rgba(77, 163, 255, 0.10),
+      transparent 70%
+    ),
+    #071b3a;
+}
+
+/* Subtle route / movement detail */
+.cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 520px;
+  height: 520px;
+  right: -220px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(77, 163, 255, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 70px rgba(77, 163, 255, 0.025),
+    0 0 0 140px rgba(77, 163, 255, 0.018),
+    0 0 0 210px rgba(77, 163, 255, 0.012);
+  pointer-events: none;
+}
+
+/* Small route line */
+.cta::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 7%;
+  top: 50%;
+  width: 180px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(77, 163, 255, 0.65),
+    rgba(255, 255, 255, 0.7)
+  );
+  transform: rotate(-24deg);
+  transform-origin: right center;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.cta__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 5rem);
+  min-height: 300px;
+  padding-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.cta__inner > div:first-child {
+  max-width: 650px;
+}
+
+.cta__title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.cta__text {
+  max-width: 580px;
+  margin: 1.1rem 0 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.75;
+}
+
+.cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Give the primary button slightly more presence */
+.cta__actions .btn--primary {
+  min-height: 50px;
+  padding-inline: 1.35rem;
+}
+
+/* WhatsApp / secondary action */
+.cta__actions .btn {
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .cta__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cta__actions {
+    justify-content: flex-start;
+  }
+
+  .cta::before {
+    right: -300px;
+  }
+
+  .cta::after {
+    right: 5%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .cta__inner {
+    min-height: auto;
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+    gap: 1.5rem;
+  }
+
+  .cta__title {
+    max-width: 13ch;
+    font-size: clamp(2rem, 9vw, 2.65rem);
+    line-height: 1.08;
+  }
+
+  .cta__text {
+    margin-top: 0.9rem;
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .cta__actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cta__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta::before {
+    width: 380px;
+    height: 380px;
+    right: -250px;
+    top: 60%;
+  }
+
+  .cta::after {
+    right: -15px;
+    top: 57%;
+    width: 130px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 960px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  .hero__copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  .net {
+    transform: translateY(4px);
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__grid {
+    gap: 5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .cta__inner {
+    grid-template-columns: minmax(0, 1.3fr) auto;
+    gap: 3rem;
+  }
+}
+
+/* =========================================================
+   MOBILE REFINEMENTS
+   ========================================================= */
+
+@media (max-width: 559px) {
+  .hero {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.8rem, 14vw, 4rem);
+  }
+
+  .hero__sub {
+    margin-top: 1.25rem;
+  }
+
+  .hero__text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .net {
+    border-radius: 20px;
+    padding: 0.75rem;
+  }
+
+  .net__cap {
+    font-size: 0.7rem;
+  }
+
+  .rmap {
+    border-radius: 20px;
+    padding: 0.75rem;
+  }
+
+  .rmap__cap {
+    font-size: 0.78rem;
+  }
+
+  .cta__inner {
+    gap: 1.5rem;
+  }
+}
+
+
