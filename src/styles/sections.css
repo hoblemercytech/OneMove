@@ -713,3 +713,39 @@
 }
 
 
+/* FINAL HERO MOBILE FIX */
+@media (max-width: 559px) {
+  .hero__grid {
+    width: min(1180px, calc(100% - 2rem));
+    margin-inline: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+
+  .hero__copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero__title {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 3.1rem);
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+    overflow-wrap: break-word;
+  }
+
+  .hero__actions {
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .net {
+    width: 100%;
+    min-width: 0;
+  }
+}
