@@ -477,15 +477,16 @@
     background-position: 62% center;
   }
 
-  .hero__grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2.5rem;
-    width: 100%;
-    min-width: 0;
-  }
+ .hero__grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  min-width: 0;
+  width: auto;
+}
 
   .hero__copy {
     width: 100%;
+     padding-inline: 0;
     min-width: 0;
   }
 
