@@ -20,7 +20,7 @@
       rgba(7, 27, 58, 0.55) 78%,
       rgba(7, 27, 58, 0.68) 100%
     ),
-    url("onemove-hero-bg.jpg");
+    url("/onemove-hero-bg.jpg");
 
   background-size: cover;
   background-position: center center;
@@ -97,7 +97,7 @@
         rgba(7, 27, 58, 0.88) 42%,
         rgba(7, 27, 58, 0.70) 100%
       ),
-      url("onemove-hero-bg.jpg");
+      url("/onemove-hero-bg.jpg");
   }
 
   .hero::before {
