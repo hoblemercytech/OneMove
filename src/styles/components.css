@@ -2932,17 +2932,25 @@
 
 @media (max-width: 560px) {
   .routebar {
-    padding: 1.25rem;
-
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(24px, 0.4fr) minmax(0, 1fr);
+    align-items: center;
     gap: 0.65rem;
+    padding: 1rem;
+  }
+
+  .routebar > div {
+    min-width: 0;
   }
 
   .routebar strong {
-    font-size: 1.05rem;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
   }
 
   .routebar__line {
-    min-width: 24px;
+    width: 100%;
+    min-width: 0;
   }
 }
 
