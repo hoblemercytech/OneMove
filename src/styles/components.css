@@ -536,6 +536,57 @@
   }
 }
 
+/* How we work section */
+.about-work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  width: min(1180px, calc(100% - 2.5rem));
+}
+
+.about-work > div {
+  min-width: 0;
+}
+
+.about-work .h2 {
+  max-width: 500px;
+  overflow-wrap: break-word;
+}
+
+.about-work .prose {
+  min-width: 0;
+  max-width: 650px;
+}
+
+.about-work .prose p {
+  overflow-wrap: break-word;
+  line-height: 1.8;
+}
+
+/* Desktop layout */
+@media (min-width: 860px) {
+  .about-work {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 6rem);
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 640px) {
+  .about-work {
+    width: calc(100% - 2rem);
+    gap: 1rem;
+  }
+
+  .about-work .h2 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .about-work .prose p {
+    font-size: 0.9rem;
+  }
+}
 
 /* =========================================================
    ONEMOVE — SERVICES PAGE
