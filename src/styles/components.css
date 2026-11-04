@@ -2984,7 +2984,7 @@
 @media (max-width: 560px) {
   .routebar {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(24px, 0.4fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr);
     align-items: center;
     gap: 0.65rem;
     padding: 1rem;
@@ -2992,11 +2992,17 @@
 
   .routebar > div {
     min-width: 0;
+    gap: 0.25rem;
   }
 
   .routebar strong {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 4vw, 1.05rem);
+    line-height: 1.3;
     overflow-wrap: anywhere;
+  }
+
+  .routebar__k {
+    font-size: 0.68rem;
   }
 
   .routebar__line {
@@ -3004,7 +3010,6 @@
     min-width: 0;
   }
 }
-
 
 /* ═══════════════════════════════════════════
    ABOUT / VALUES
