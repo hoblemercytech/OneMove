@@ -466,6 +466,94 @@
   white-space: nowrap;
 }
 
+
+/* =========================================================
+   HERO — MOBILE RESPONSIVENESS FIX
+   ========================================================= */
+
+@media (max-width: 559px) {
+  .hero {
+    padding: 3rem 0 3rem;
+    background-position: 62% center;
+  }
+
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero__copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Prevent headline from extending beyond the screen */
+  .hero__title {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 3.25rem);
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .hero__sub {
+    max-width: 100%;
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .hero__text {
+    max-width: 100%;
+    font-size: 0.94rem;
+    line-height: 1.75;
+  }
+
+  /* Stack action buttons neatly */
+  .hero__actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+
+  /* Network graphic */
+  .net {
+    width: 100%;
+    min-width: 0;
+    padding: 0.75rem;
+    border-radius: 18px;
+  }
+
+  .net__svg {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .net__cap {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  .net__cap span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
 /* =========================================================
    TABLET
    ========================================================= */
