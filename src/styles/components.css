@@ -4240,6 +4240,10 @@
   animation: admin-spin 0.75s linear infinite;
 }
 
+#tracking-id {
+  font-size: 16px;
+}
+
 @keyframes admin-spin {
   to {
     transform: rotate(360deg);
