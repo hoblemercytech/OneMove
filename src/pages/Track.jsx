@@ -358,6 +358,7 @@ export default function Track() {
                 <input
                   id="tracking-id"
                   name="trackingId"
+                  style={{ fontSize: '16px' }}
                   value={id}
                   onChange={(event) => {
                     setId(event.target.value);
